@@ -35,6 +35,8 @@ module set_alarm_interface(
 	//State Register
 	always_ff @(posedge clk or posedge reset) begin 
 		if(reset)
+			alarm_hours <= 0;
+			alarm_mins <= 0;
 			state <= IDLE;
 		else begin 
 			case(state)
